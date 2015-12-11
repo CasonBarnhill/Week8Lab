@@ -7,9 +7,15 @@ namespace Week8Lab.Reddit.Models
 {
     public class Post
     {
-        public int Id { get; set; }
-        public int Like { get; set; }
-        public int Dislike { get; set; }
+        public int PostId { get; set; }
+        public string Title { get; set; }
+        public string Message { get; set; }
+        public int Up { get; set; }
+        public int Down { get; set; }
+        public int Popularity { get { return Up - Down; } }
+        public DateTime PostDate { get; set; }
+        public virtual User User { get; set; }
+        public virtual int UserId { get; set; }
 
     }
 }

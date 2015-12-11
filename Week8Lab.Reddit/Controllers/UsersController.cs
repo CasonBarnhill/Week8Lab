@@ -14,103 +14,103 @@ namespace Week8Lab.Reddit.Controllers
     {
         private RedditCloneContext db = new RedditCloneContext();
 
-        // GET: Accounts
+        // GET: Users
         public ActionResult Index()
         {
-            return View(db.Accounts.ToList());
+            return View(db.Users.ToList());
         }
 
-        // GET: Accounts/Details/5
+        // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User account = db.Accounts.Find(id);
-            if (account == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(account);
+            return View(user);
         }
 
-        // GET: Accounts/Create
+        // GET: Users/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Accounts/Create
+        // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LoginId,Password")] User account)
+        public ActionResult Create([Bind(Include = "Id,LoginId,Password")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Accounts.Add(account);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(account);
+            return View(user);
         }
 
-        // GET: Accounts/Edit/5
+        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User account = db.Accounts.Find(id);
-            if (account == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(account);
+            return View(user);
         }
 
-        // POST: Accounts/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LoginId,Password")] User account)
+        public ActionResult Edit([Bind(Include = "Id,LoginId,Password")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(account).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(account);
+            return View(user);
         }
 
-        // GET: Accounts/Delete/5
+        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User account = db.Accounts.Find(id);
-            if (account == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(account);
+            return View(user);
         }
 
-        // POST: Accounts/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User account = db.Accounts.Find(id);
-            db.Accounts.Remove(account);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
