@@ -11,24 +11,24 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Like)
+            @Html.DisplayNameFor(model => model.Up)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Like)
+            @Html.DisplayFor(model => model.Up)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Dislike)
+            @Html.DisplayNameFor(model => model.Down)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Dislike)
+            @Html.DisplayFor(model => model.Down)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -9,31 +9,14 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Like)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dislike)
-        </th>
-        <th></th>
-    </tr>
+<div class="Up" data-postId="postId">
+UP
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Like)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dislike)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<div class="Down" data-postId="postId">
+DOWN
+</div>
+
 }
 
-</table>
+

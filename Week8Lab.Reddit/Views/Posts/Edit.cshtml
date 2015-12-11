@@ -15,21 +15,21 @@
         <h4>Post</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.PostId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Like, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Up, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Like, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Like, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Up, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Up, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Dislike, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Down, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Dislike, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Dislike, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Down, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Down, "", new { @class = "text-danger" })
             </div>
         </div>
 

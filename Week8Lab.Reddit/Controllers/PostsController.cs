@@ -114,6 +114,22 @@ namespace Week8Lab.Reddit.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Up(int postId)
+        {
+            Post post = db.Posts.Find(postId);
+            db.Posts.Find(postId);
+            post.Up++;
+            db.SaveChanges();
+            return Content(post.Up.ToString());
+        }
+        public ActionResult Down(int postId)
+        {
+            Post post = db.Posts.Find(postId);
+            db.Posts.Find(postId);
+            post.Down++;
+            db.SaveChanges();
+            return Content(post.Down.ToString());
+        }
 
         protected override void Dispose(bool disposing)
         {
