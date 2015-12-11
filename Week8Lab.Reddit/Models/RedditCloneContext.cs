@@ -21,7 +21,7 @@ namespace Week8Lab.Reddit.Models
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
          public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<User> Accounts { get; set; }
     }
 
     //public class MyEntity

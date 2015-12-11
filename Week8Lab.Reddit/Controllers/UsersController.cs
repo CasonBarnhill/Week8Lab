@@ -10,7 +10,7 @@ using Week8Lab.Reddit.Models;
 
 namespace Week8Lab.Reddit.Controllers
 {
-    public class AccountsController : Controller
+    public class UsersController : Controller
     {
         private RedditCloneContext db = new RedditCloneContext();
 
@@ -27,7 +27,7 @@ namespace Week8Lab.Reddit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Account account = db.Accounts.Find(id);
+            User account = db.Accounts.Find(id);
             if (account == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace Week8Lab.Reddit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LoginId,Password")] Account account)
+        public ActionResult Create([Bind(Include = "Id,LoginId,Password")] User account)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Week8Lab.Reddit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Account account = db.Accounts.Find(id);
+            User account = db.Accounts.Find(id);
             if (account == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace Week8Lab.Reddit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LoginId,Password")] Account account)
+        public ActionResult Edit([Bind(Include = "Id,LoginId,Password")] User account)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Week8Lab.Reddit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Account account = db.Accounts.Find(id);
+            User account = db.Accounts.Find(id);
             if (account == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace Week8Lab.Reddit.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Account account = db.Accounts.Find(id);
+            User account = db.Accounts.Find(id);
             db.Accounts.Remove(account);
             db.SaveChanges();
             return RedirectToAction("Index");
