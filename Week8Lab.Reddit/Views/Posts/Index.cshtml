@@ -9,6 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@foreach (var item in Model)
+{
+
+}
 <div class="Up" data-postId="postId">
 UP
 </div>
@@ -17,6 +22,18 @@ UP
 DOWN
 </div>
 
+<script>
+
+    $('Up') .click(function(){ var postId = $(this).data('id');
+        $.ajax('/Up' data:{ postId: postId});
+
+</script>
+<script>
+
+    $('Down') .click(function(){ var postId = $(this).data('id');
+        $.ajax('/Up' data:{ postId: postId});
+
+</script>
 }
 
 

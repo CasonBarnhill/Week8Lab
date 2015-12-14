@@ -107,6 +107,17 @@ namespace Week8Lab.Reddit.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        public ActionResult Editing ([Bind(Include = "LoginId, Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
         public ActionResult DeleteConfirmed(int id)
         {
             User user = db.Users.Find(id);
