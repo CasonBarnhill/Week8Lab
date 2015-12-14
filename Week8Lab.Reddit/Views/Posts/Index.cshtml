@@ -4,7 +4,8 @@
 }
 
 <p>
-    @Html.ActionLink("Create New Post", "Create")
+   
+    <a href="@Url.Action("Create","Posts")"><span class='glyphicon glyphicon-plus' aria-hidden='true'> </span></a>
 </p>
 
 @foreach (var item in Model.OrderByDescending(x=>x.Popularity))
