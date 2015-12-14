@@ -16,6 +16,7 @@ namespace Week8Lab.Reddit.Migrations
                         Message = c.String(),
                         Up = c.Int(nullable: false),
                         Down = c.Int(nullable: false),
+                        ImageUrl = c.String(),
                         PostDate = c.DateTime(nullable: false),
                         User_UserId = c.Int(),
                     })

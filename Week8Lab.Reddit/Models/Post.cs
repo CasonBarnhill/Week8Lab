@@ -13,6 +13,7 @@ namespace Week8Lab.Reddit.Models
         public string Message { get; set; }
         public int Up { get; set; }
         public int Down { get; set; }
+        public string ImageUrl { get; set; }
         [NotMapped]
         public int Popularity { get { return Up - Down; } }
         public DateTime PostDate { get; set; }

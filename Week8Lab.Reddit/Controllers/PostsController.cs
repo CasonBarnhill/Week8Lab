@@ -61,10 +61,13 @@ namespace Week8Lab.Reddit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PostId,Title,Message,Up,Down,PostDate")] Post post)
+        public ActionResult Create([Bind(Include = "PostId,Title,Message,ImageUrl")] Post post)
         {
             if (ModelState.IsValid)
             {
+                post.Up = 0;
+                post.Down = 0;
+                post.PostDate = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
