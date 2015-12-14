@@ -13,7 +13,7 @@ namespace Week8Lab.Reddit.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201512111738367_Initial-Create"; }
+            get { return "201512141547252_Initial-Create"; }
         }
         
         string IMigrationMetadata.Source

@@ -146,13 +146,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512111738367_Initial-Create.cs" />
-    <Compile Include="Migrations\201512111738367_Initial-Create.Designer.cs">
-      <DependentUpon>201512111738367_Initial-Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512112015083_Model-Changes.cs" />
-    <Compile Include="Migrations\201512112015083_Model-Changes.Designer.cs">
-      <DependentUpon>201512112015083_Model-Changes.cs</DependentUpon>
+    <Compile Include="Migrations\201512141547252_Initial-Create.cs" />
+    <Compile Include="Migrations\201512141547252_Initial-Create.Designer.cs">
+      <DependentUpon>201512141547252_Initial-Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\User.cs" />
@@ -220,11 +216,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512111738367_Initial-Create.resx">
-      <DependentUpon>201512111738367_Initial-Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512112015083_Model-Changes.resx">
-      <DependentUpon>201512112015083_Model-Changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512141547252_Initial-Create.resx">
+      <DependentUpon>201512141547252_Initial-Create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

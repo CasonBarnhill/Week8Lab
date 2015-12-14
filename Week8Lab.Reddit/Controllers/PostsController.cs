@@ -19,6 +19,21 @@ namespace Week8Lab.Reddit.Controllers
         {
             return View(db.Posts.ToList());
         }
+        public ActionResult UpVote(int postId)
+        {
+            var post = db.Posts.Find(postId);
+            post.Up++;
+            db.SaveChanges();
+            return Content(post.Popularity.ToString());
+        }
+
+        public ActionResult DownVote(int postId)
+        {
+            var post = db.Posts.Find(postId);
+            post.Down++;
+            db.SaveChanges();
+            return Content(post.Popularity.ToString());
+        }
 
         // GET: Posts/Details/5
         public ActionResult Details(int? id)
@@ -46,7 +61,7 @@ namespace Week8Lab.Reddit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Like,Dislike")] Post post)
+        public ActionResult Create([Bind(Include = "PostId,Title,Message,Up,Down,PostDate")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +93,7 @@ namespace Week8Lab.Reddit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Like,Dislike")] Post post)
+        public ActionResult Edit([Bind(Include = "PostId,Title,Message,Up,Down,PostDate")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -113,22 +128,6 @@ namespace Week8Lab.Reddit.Controllers
             db.Posts.Remove(post);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-        public ActionResult Up(int postId)
-        {
-            Post post = db.Posts.Find(postId);
-            db.Posts.Find(postId);
-            post.Up++;
-            db.SaveChanges();
-            return Content(post.Up.ToString());
-        }
-        public ActionResult Down(int postId)
-        {
-            Post post = db.Posts.Find(postId);
-            db.Posts.Find(postId);
-            post.Down++;
-            db.SaveChanges();
-            return Content(post.Down.ToString());
         }
 
         protected override void Dispose(bool disposing)
